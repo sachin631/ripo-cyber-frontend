@@ -6,6 +6,7 @@ import WhoChooseUs from "./component/WhoChooseUs";
 import YourCareer from "./component/YourCareer";
 import ClientTestomonial from "./component/clientTestomonial";
 import WorkTogether from "./component/WorkTogether";
+import InternshipCompo from "./component/InternshipCompo";
 
 export default function Home(): JSX.Element {
   return (
@@ -17,6 +18,7 @@ export default function Home(): JSX.Element {
         <WhoChooseUs/>
         <YourCareer/>
         <ClientTestomonial/>
+        <InternshipCompo/>
         <WorkTogether/>
       </div>
     </main>

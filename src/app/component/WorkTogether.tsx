@@ -8,7 +8,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 const WorkTogether = () => {
     return (
         <>
-            <section className="text-white flex justify-center items-center px-4 py-4">
+            <section className="text-white flex justify-center items-center px-4 py-2">
                 <div className="flex md:flex-row flex-col justify-center items-center gap-4 ">
                     <div>
                         <div className="">

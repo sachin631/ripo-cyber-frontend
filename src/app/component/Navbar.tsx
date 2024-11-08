@@ -17,7 +17,7 @@ import Link from "next/link";
 
 const pages = [
   { name: "HOME", href: "/" },
-  { name: "ABOUT US", href: "/about" },
+  { name: "ABOUT US", href: "#about" },
   { name: "CAREER", href: "/career" },
   { name: "INTERNSHIP", href: "/internship" },
   { name: "BLOGS", href: "/blog" },
