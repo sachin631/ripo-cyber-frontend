@@ -6,7 +6,7 @@ import React from 'react'
 const InternshipCompo: React.FC = () => {
   const router=useRouter();
   return (
-    <section className=' text-white mt-4 mb-4 md:mb-0'>
+    <section className=' text-white mt-4 mb-4 md:mb-0' id='internship'>
       <div className='px-10  main-div pb-4'>
         <h1 className='text-center md:text-6xl text-3xl mb-6'>Intership</h1>
         <div className='flex justify-center items-center gap-4 mt-4'>

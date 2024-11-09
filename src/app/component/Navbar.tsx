@@ -17,12 +17,12 @@ import Link from "next/link";
 
 const pages = [
   { name: "HOME", href: "/" },
-  { name: "ABOUT US", href: "#about" },
-  { name: "CAREER", href: "/career" },
-  { name: "INTERNSHIP", href: "/internship" },
+  { name: "ABOUT US", href: "/#about" },
+  { name: "CAREER", href: "/#career" },
+  { name: "INTERNSHIP", href: "/#internship" },
   { name: "BLOGS", href: "/blog" },
   {name:"CONTACT",href:"/contact"},
-  {name:'USE CASE',href:'/useCase'}
+  {name:'USE CASE',href:'/#useCase'}
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
