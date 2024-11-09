@@ -10,11 +10,11 @@ const Home: React.FC = () => {
           <span>THAT TRANSFORM</span>
           <span>YOUR BUSINESS</span>
           <div>
-            <Button className="text-black">Learn more</Button>
+            <Button className="text-black" href="/#internship">Learn more</Button>
           </div>
         </div>
         <figure className="w-full md:w-[40%] ">
-          <img src="/logo.jpg" />
+          <img src="/logo.jpg" className="rounded-full animate-spin" />
         </figure>
       </div>
     </section>

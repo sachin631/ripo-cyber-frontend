@@ -4,6 +4,7 @@ import { Button } from "antd";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import Link from "next/link";
 
 const WorkTogether = () => {
     return (
@@ -16,7 +17,7 @@ const WorkTogether = () => {
                             <h2 className="py-2">Book a free consultation</h2>
                         </div>
                         <div>
-                            <Button>Contact Us</Button>
+                            <Link href="/contact"><Button>Contact Us</Button></Link>
                         </div>
                         <div className="flex flex-col gap-4 mt-4">
                             <div>
