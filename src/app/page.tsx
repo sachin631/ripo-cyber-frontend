@@ -7,6 +7,7 @@ import YourCareer from "./component/YourCareer";
 import ClientTestomonial from "./component/clientTestomonial";
 import WorkTogether from "./component/WorkTogether";
 import InternshipCompo from "./component/InternshipCompo";
+import { JSX } from "react";
 
 export default function Home(): JSX.Element {
   return (
