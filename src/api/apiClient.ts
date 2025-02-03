@@ -24,11 +24,21 @@ export const privacy_details = async () => {
   return response?.data;
 }
 
-export const get_our_services_listing = async (page: number, limit: number, search_key: string, data_type: number) => {
-  console.log(page, limit, search_key, 'page');
-  const response = await api.get(`/admin/useCase/usecase_listing?page=${page}&limit=${limit}&search_key=${search_key}&data_type=${data_type}`, {
+export const get_our_services_listing = async (data_type: number) => {
+  console.log(data_type, 'data_type');
+  const response = await api.get(`/user/common/usecase_listing?data_type=${data_type}`, {
     headers: {
-      'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
+    }
+  });
+  console.log('responseresponseresponse', response);
+  return response?.data;
+}
+
+export const carerr_details=async()=>{
+  const response = await api.get('/user/common/career_detail',{
+    headers: {
+      'Content-Type': 'application/json',
     }
   });
   return response?.data;
