@@ -21,7 +21,7 @@ const OurServices: React.FC = () => {
         <>
             <section className="text-white mt-10 px-10 py-10">
                 <h1 className="text-center text-4xl p-4">OUR SERVICES</h1>
-                <div className="flex flex-col justify-center items-center gap-4 md:flex-row md:justify-evenly md:mt-4 overflow-x-auto">
+                <div className="flex flex-col justify-center items-center gap-4 md:flex-row md:justify-evenly md:mt-4 overflow-x-auto scrollbar-hide ">
                     {
                         OUR_SERVICES_list?.map((curelem: any, index: number) => (
                             <Card
@@ -29,7 +29,7 @@ const OurServices: React.FC = () => {
                                 style={{ width: 240 }}
                                 key={index}
                                 cover={<img alt="example" src={curelem?.image?.url} />}
-                                className="max-h-[60vh] overflow-x-hidden overflow-y-auto"
+                                className="max-h-[60vh] overflow-x-hidden overflow-y-auto min-w-[240px] scrollbar-hide"
                             >
                                 <Meta title={curelem.name} description={curelem.description} />
                             </Card>

@@ -25,18 +25,25 @@ export const privacy_details = async () => {
 }
 
 export const get_our_services_listing = async (data_type: number) => {
-  console.log(data_type, 'data_type');
   const response = await api.get(`/user/common/usecase_listing?data_type=${data_type}`, {
     headers: {
       'Content-Type': 'application/json',
     }
   });
-  console.log('responseresponseresponse', response);
   return response?.data;
 }
 
 export const carerr_details=async()=>{
   const response = await api.get('/user/common/career_detail',{
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  });
+  return response?.data;
+}
+
+export const work_together=async()=>{
+  const response = await api.get('/user/common/work_together_detail',{
     headers: {
       'Content-Type': 'application/json',
     }

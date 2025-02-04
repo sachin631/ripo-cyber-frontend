@@ -19,9 +19,9 @@ const YourCareer = () => {
         <>
             <h1 className="text-center text-4xl text-white mt-10" id="career">Your Career</h1>
             <section className="flex justify-center items-center  py-10 px-10 text-white">
-                <p>
+                <div className="text-center px-8">
                     <div dangerouslySetInnerHTML={{ __html: carerr?.description }} />
-                </p>
+                </div>
             </section>
         </>
     )

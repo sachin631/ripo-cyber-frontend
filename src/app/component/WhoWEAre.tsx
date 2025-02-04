@@ -28,9 +28,9 @@ const WhoWEAre = () => {
       <section className="bg-[#1b1a16] px-10 text-white" id="about">
         <div className="flex flex-col justify-center items-center ">
           <h1 className="text-center text-4xl py-4">WHO WE ARE</h1>
-          <p className="text-center px-8">
+          <div className="text-center px-8">
            <div dangerouslySetInnerHTML={{ __html: query.data?.data?.about_us }} />
-          </p>
+          </div>
         </div>
       </section>
       <ToastContainer/>
