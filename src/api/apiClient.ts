@@ -33,8 +33,8 @@ export const get_our_services_listing = async (data_type: number) => {
   return response?.data;
 }
 
-export const carerr_details=async()=>{
-  const response = await api.get('/user/common/career_detail',{
+export const carerr_details = async () => {
+  const response = await api.get('/user/common/career_detail', {
     headers: {
       'Content-Type': 'application/json',
     }
@@ -42,8 +42,8 @@ export const carerr_details=async()=>{
   return response?.data;
 }
 
-export const work_together=async()=>{
-  const response = await api.get('/user/common/work_together_detail',{
+export const work_together = async () => {
+  const response = await api.get('/user/common/work_together_detail', {
     headers: {
       'Content-Type': 'application/json',
     }
@@ -51,4 +51,32 @@ export const work_together=async()=>{
   return response?.data;
 }
 
+
+export const internship_listing = async () => {
+  const response = await api.get('/user/common/internship_category_listing', {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  return response?.data;
+}
+
+export const internship_details = async (internship_category_id: any) => {
+  const response = await api.get(`/user/common/get_internship_details?internship_category_id=${internship_category_id}`, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  return response?.data;
+}
+
+export const apply_internship = async (data: any) => {
+  const response = await api.post('/user/common/apply_internship', data, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+  });
+  return response?.data;
+}
 

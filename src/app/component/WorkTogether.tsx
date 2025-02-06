@@ -5,8 +5,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Link from "next/link";
-import { useQuery } from "@tanstack/react-query";
-import { work_together } from "@/api/apiClient";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { apply_internship, work_together } from "@/api/apiClient";
 
 const WorkTogether = () => {
     const query = useQuery({
@@ -16,11 +16,12 @@ const WorkTogether = () => {
             return res;
         }
     });
+
+    
     const work_togerther_data = query?.data?.data
-    console.log(work_togerther_data, 'work_togerther')
     return (
         <>
-            <section className="text-white flex justify-center items-center px-4 ">
+            <section className="text-white flex justify-center items-center px- ">
                 <div className="flex md:flex-row flex-col justify-center items-center gap-4 ">
                     <div>
                         <div className="">
