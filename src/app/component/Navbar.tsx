@@ -14,17 +14,28 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const pages = [
-  { name: "HOME", href: "/" },
-  { name: "ABOUT US", href: "/#about" },
-  { name: "CAREER", href: "/#career" },
-  { name: "INTERNSHIP", href: "/#internship" },
-  { name: "BLOGS", href: "/blog" },
-  {name:"CONTACT",href:"/contact"},
-  {name:'USE CASE',href:'/#useCase'}
+  { name: "HOME", href: "/pages/unprotected" },
+  { name: "ABOUT US", href: "/pages/unprotected/#about" },
+  { name: "CAREER", href: "/pages/unprotected/#career" },
+  { name: "INTERNSHIP", href: "/pages/unprotected/#internship" },
+  { name: "BLOGS", href: "/pages/unprotected/blog" },
+  { name: "CONTACT", href: "/pages/unprotected/contact" },
+  { name: 'USE CASE', href: '/pages/unprotected/#useCase' }
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = [
+  {
+    name: "logout",
+    href: "/login",
+  },
+  {
+    name: "profile",
+    href: "/pages/unprotected/profile",
+  }
+];
+
 
 const Navbar: React.FC = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -33,6 +44,8 @@ const Navbar: React.FC = () => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
+  const router = useRouter();
+
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -53,8 +66,8 @@ const Navbar: React.FC = () => {
     <AppBar position="static" sx={{ backgroundColor: "#1b1a16" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src="/logo.jpg"alt="logo" className="w-[10%]"/>
-          
+          <img src="/logo.jpg" alt="logo" className="w-[10%]" />
+
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -85,10 +98,10 @@ const Navbar: React.FC = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((curelem:any,index) => (
+              {pages?.map((curelem: any, index) => (
                 <MenuItem key={index} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <Link href={curelem.href}>{curelem.name}</Link>
+                    <Link href={curelem?.href}>{curelem?.name}</Link>
                   </Typography>
                 </MenuItem>
               ))}
@@ -96,13 +109,13 @@ const Navbar: React.FC = () => {
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((curelem:any,index) => (
+            {pages.map((curelem: any, index) => (
               <Button
                 key={index}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <Link href={curelem.href}>{curelem.name}</Link>
+                <Link href={curelem.href}>{curelem?.name}</Link>
               </Button>
             ))}
           </Box>
@@ -129,11 +142,13 @@ const Navbar: React.FC = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleCloseUserMenu} className="flex flex-col justify-center items-center gap-4">
+                {/* <Link href="/pages/unprotected/profile">  <Typography textAlign="center">Profile</Typography></Link> */}
+                <Typography textAlign="center" onClick={() => {
+                  localStorage.removeItem('token');
+                  router.push('/login');
+                }}>Logout</Typography>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>

@@ -89,3 +89,12 @@ export const user_login = async (data: any) => {
   return response?.data;
 }
 
+export const contat_us = async (data: any) => {
+  const response = await api.post('/user/common/contact_us', data, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  return response?.data;
+}
+

@@ -24,7 +24,7 @@ const InternshipCompo: React.FC = () => {
           {internship_list?.map((curelem: any) => {
             return (
               <div key={curelem._id}>
-                <h1 className='px-4 text-center py-4 w-[100] h-[80%] bg-blue-500 rounded-lg hover:bg-blue-400 cursor-pointer' onClick={() => router.push(`/intershipDetails/${curelem?._id}`)}>{curelem?.name}</h1>
+                <h1 className='px-4 text-center py-4 w-[100] h-[80%] bg-blue-500 rounded-lg hover:bg-blue-400 cursor-pointer' onClick={() => router.push(`/pages/unprotected/intershipDetails/${curelem?._id}`)}>{curelem?.name}</h1>
               </div>
             )
           })}

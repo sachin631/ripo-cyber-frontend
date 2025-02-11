@@ -8,19 +8,13 @@ import ClientTestomonial from "./component/clientTestomonial";
 import WorkTogether from "./component/WorkTogether";
 import InternshipCompo from "./component/InternshipCompo";
 import { JSX } from "react";
+import Login from "./component/Login";
 
 export default function Home(): JSX.Element {
   return (
     <main className="h-full ">
       <div className=" h-full bg-[#1b1a16]">
-        <HomeComponent />
-        <WhoWEAre/>
-        <OurServices/>
-        <WhoChooseUs/>
-        <YourCareer/>
-        <ClientTestomonial/>
-        <InternshipCompo/>
-        <WorkTogether/>
+        <Login/>
       </div>
     </main>
   );

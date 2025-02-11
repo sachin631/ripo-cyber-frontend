@@ -17,7 +17,7 @@ const WorkTogether = () => {
         }
     });
 
-    
+
     const work_togerther_data = query?.data?.data
     return (
         <>
@@ -29,7 +29,7 @@ const WorkTogether = () => {
                             <h2 className="py-2">Book a free consultation</h2>
                         </div>
                         <div>
-                            <Link href="/contact"><Button>Contact Us</Button></Link>
+                            <Link href="/pages/unprotected/contact"><Button>Contact Us</Button></Link>
                         </div>
                         <div className="flex flex-col gap-4 mt-4">
                             <div>
