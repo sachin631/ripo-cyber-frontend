@@ -32,7 +32,8 @@ const page = () => {
             return res;
         },
         onSuccess: (res: any) => {
-            toast.success(res?.data?.message);
+            console.log(res, 'res');
+            toast.success(res?.message);
         },
         onError: (err: any) => {
             toast.error(err?.response?.data?.message);
@@ -40,6 +41,7 @@ const page = () => {
     });
 
     const onSubmitbtn = async (data: any) => {
+        data.internship_id = id;
         console.log(data, 'data');
         mutation.mutate(data);
     }

@@ -80,3 +80,12 @@ export const apply_internship = async (data: any) => {
   return response?.data;
 }
 
+export const user_login = async (data: any) => {
+  const response = await api.post('/user/auth/login', data, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  return response?.data;
+}
+
