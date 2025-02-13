@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { queryClient } from '@/tanstack/Store'
 import Link from 'next/link'
 import { Modal } from 'antd'
-import { useNewPassword } from '@/hooks/UseMutationHooks/UserLoginMutaion'
+import { useNewPassword } from '@/hooks/useMutation'
 
 const NewPassword = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);

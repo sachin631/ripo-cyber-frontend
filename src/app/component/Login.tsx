@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { ToastContainer } from 'react-toastify';
 import Link from 'next/link'
-import { userLoginMutation } from '@/hooks/UseMutationHooks/UserLoginMutaion'
+import { userLoginMutation } from '@/hooks/useMutation';
 
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();

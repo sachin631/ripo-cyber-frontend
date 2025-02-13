@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { user_login } from '@/api/apiClient'
 import Link from 'next/link'
 import { queryClient } from '@/tanstack/Store'
-import { forgotPasswordMutation, verifyUserOtp } from '@/hooks/UseMutationHooks/UserLoginMutaion'
+import { forgotPasswordMutation, verifyUserOtp } from '@/hooks/useMutation'
 
 
 const Verification = () => {

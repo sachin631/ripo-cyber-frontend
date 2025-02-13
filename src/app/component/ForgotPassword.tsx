@@ -4,7 +4,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { ToastContainer } from 'react-toastify';
 import { useRouter } from 'next/navigation';
-import { forgotPasswordMutation } from '@/hooks/UseMutationHooks/UserLoginMutaion';
+import { forgotPasswordMutation } from '@/hooks/useMutation';
 
 
 const ForgotPassword = () => {
