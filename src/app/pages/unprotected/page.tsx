@@ -10,7 +10,7 @@ import React from 'react'
 
 const page = () => {
     return (
-        <main className="h-full ">
+        <main className="h-full bg-[#1b1a16]">
             <div className=" h-full bg-[#1b1a16]">
                 <Home />
                 <WhoWEAre />

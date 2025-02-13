@@ -1,42 +1,25 @@
 'use client'
 import { Button } from '@mui/material'
-import { useMutation } from '@tanstack/react-query'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { toast, ToastContainer } from 'react-toastify';
-import { useRouter } from 'next/navigation';
-import { user_login } from '@/api/apiClient'
-
+import { ToastContainer } from 'react-toastify';
+import Link from 'next/link'
+import { userLoginMutation } from '@/hooks/UseMutationHooks/UserLoginMutaion'
 
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState<any>(false);
-    const router = useRouter();
-    const LoginButton = async (data: any) => {
+    const LoginButton: any = async (data: any) => {
         mutation.mutate(data);
     }
-    const mutation = useMutation({
-        mutationFn: async (data) => {
-            const response = user_login(data);
-            return response;
-        },
-        onSuccess: async (res: any) => {
-            console.log(res, 'resres');
-            localStorage.setItem('token', res?.data.token);
-            toast.success(res?.message);
-            router.push('/pages/unprotected');
-        },
-        onError: (err: any) => {
-            toast.error(err?.response?.data?.message);
-        }
-    })
+    const mutation = userLoginMutation();
 
     return (
         <>
             <div className='flex justify-center items-center min-h-screen '>
-                <div className='bg-[#FFFFFF] shadow-2xl h-[80vh] md:w-[40%] w-[90%]  flex justify-cente items-center flex-col rounded-t-4xl'>
+                <div className='bg-[#FFFFFF] shadow-2xl h-[80vh pb-2 md:w-[40%] w-[90%]  flex justify-cente items-center flex-col rounded-t-4xl'>
                     <div className='bg-[#1b1a16] w-[100%] flex justify-center items-center p-4 '>
-                        <img src='/logo.jpg' alt='logo' className='w-[200px]'/>
+                        {/* <img src='/logo.jpg' alt='logo' className='w-[200px]' /> */}
                     </div>
                     <div className='flex justify-center items-center flex-col gap-2 mt-4'>
                         <span className='font-semibold text-[26px] leading-[26px]'>Let's get started</span>
@@ -60,6 +43,9 @@ const Login = () => {
                             </div>
                             {/* <div>2</div> */}
                         </form>
+                        <Link href='/forgot-password'>
+                            <h1 className='text-blue-400 text-end cursor-pointer active:text-blue-500 mt-1'>Forgot password</h1>
+                        </Link>
                     </div>
                     <div><Button variant='contained' color='primary' className='mt-4' type='submit' onClick={handleSubmit(LoginButton)}>LOgin</Button></div>
                 </div>

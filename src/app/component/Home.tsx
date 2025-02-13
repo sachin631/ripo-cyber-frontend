@@ -32,7 +32,7 @@ const Home: React.FC = () => {
         <div className="md:text-6xl text-2xl flex flex-col justify-center items-center gap-3 ">
           <div dangerouslySetInnerHTML={{ __html: query.data?.data?.description }} />
           <div>
-            <Button className="text-black" href="/#internship" variant="contained">Learn more</Button>
+            <Button className="text-black" href="/pages/unprotected/#internship" variant="contained">Learn more</Button>
           </div>
         </div>
         <figure className="w-full md:w-[40%] ">

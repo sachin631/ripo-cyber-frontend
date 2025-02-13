@@ -52,8 +52,8 @@ const WorkTogether = () => {
 
                         </div>
                     </div>
-                    <div className="md:w-[60%] w-[100%]">
-                        <img src="/logo.jpg" alt="image" />
+                    <div className="md:w-[60%] height-[30px] w-[100%]">
+                        <img src="/logo.jpg" alt="image" className="md:w-[90%]"/>
                     </div>
                 </div>
             </section>

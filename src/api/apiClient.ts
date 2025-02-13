@@ -98,3 +98,30 @@ export const contat_us = async (data: any) => {
   return response?.data;
 }
 
+export const forgotPasswordClient = async (data: any) => {
+  const response = await api.post('/user/auth/forgot_password', data, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  return response?.data;
+}
+
+export const verifyOtp = async (data: any) => {
+  const response = await api.post('/user/auth/verify_otp', data, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  return response?.data;
+}
+
+export const new_passwordClient = async (data: any) => {
+  const response = await api.put('/user/auth/new_password', data, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  return response?.data;
+}
+

@@ -34,7 +34,7 @@ const ContactUs = () => {
     }
 
     return (
-        <div className='md:m-[20%] mt-16'>
+        <div className='md:m-[20%] mt-16 bg-[#1b1a16]'>
             <h1 className='text-4xl text-yellow-300 text-center md:mt-5 m-1 mt-[40%]'>Contact Us</h1>
             <p className='text-white text-2xl text-center'>Any Question Or Remarks Just write Your Message</p>
             <section className=' flex md:flex-row flex-col justify-start items-center m-8'>
