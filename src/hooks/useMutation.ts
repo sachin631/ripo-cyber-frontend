@@ -1,6 +1,7 @@
 import { forgotPasswordClient, new_passwordClient, user_login, verifyOtp } from "@/api/apiClient";
-import { queryClient } from "@/tanstack/Store";
-import { useMutation } from "@tanstack/react-query";
+// import { queryClient } from "@/tanstack/Store";
+import { storeDataInTanstack } from "@/tanstack/tanstackStorage";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
@@ -35,14 +36,17 @@ export const forgotPasswordMutation = () => {
             return response;
         },
         onSuccess: async (res: any, data: any) => {
+            console.log('onsuccess')
+            storeDataInTanstack('email', data?.email);
+
             toast.success(res?.message);
-            queryClient.setQueryData(['email'], data?.email);
             setTimeout(() => {
                 router.push('/verification');
 
             }, 1000)
 
         },
+
         onError: (err: any) => {
             toast.error(err?.response?.data?.message);
         }
@@ -80,7 +84,7 @@ export const useNewPassword = () => {
         },
         onSuccess: async (res: any) => {
             toast.success(res?.message);
-           
+
         },
         onError: (err: any) => {
             toast.error(err?.response?.data?.message);

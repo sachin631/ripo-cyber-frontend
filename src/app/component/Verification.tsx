@@ -1,31 +1,25 @@
 'use client'
 import { Button } from '@mui/material'
-import { useMutation } from '@tanstack/react-query'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
-import { toast, ToastContainer } from 'react-toastify';
-import { useRouter } from 'next/navigation';
-import { user_login } from '@/api/apiClient'
-import Link from 'next/link'
-import { queryClient } from '@/tanstack/Store'
+import { ToastContainer } from 'react-toastify';
 import { forgotPasswordMutation, verifyUserOtp } from '@/hooks/useMutation'
+import { getDataFromTanstack } from '@/tanstack/tanstackStorage'
 
 
 const Verification = () => {
-    const user_email = queryClient.getQueryData(['email']);
-
     const { handleSubmit, reset, register, formState: { errors } } = useForm();
-
     const mutation = verifyUserOtp();
     const mutation2 = forgotPasswordMutation();
 
 
     const verifyButton = (data: any) => {
+        const user_email = getDataFromTanstack('email');
         data.email = user_email;
         mutation.mutate(data);;
     }
     const resendButton = (data: any) => {
-        console.log('hello')
+        const user_email = getDataFromTanstack('email');
         data = {
             email: user_email
         };

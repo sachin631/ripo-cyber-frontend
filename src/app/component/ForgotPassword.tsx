@@ -15,7 +15,7 @@ const ForgotPassword = () => {
         }
     });
     const mutation = forgotPasswordMutation();
-    
+
     const confirmButton = (data: any) => {
         mutation.mutate(data);
     }
@@ -38,7 +38,7 @@ const ForgotPassword = () => {
                             </div>
                         </form>
                     </div>
-                    <div><Button variant='contained' color='primary' className='mt-4' type='submit' onClick={handleSubmit(confirmButton)}>{mutation?.isPending?'Sending...':'Send'}</Button></div>
+                    <div><Button variant='contained' color='primary' className='mt-4' type='submit' onClick={handleSubmit(confirmButton)}>{mutation?.isPending ? 'Sending...' : 'Send'}</Button></div>
                 </div>
                 <ToastContainer />
             </div>
