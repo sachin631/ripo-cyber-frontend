@@ -49,7 +49,7 @@ const NewPassword = () => {
             <div className='flex justify-center items-center min-h-screen '>
                 <div className='bg-[#FFFFFF] shadow-2xl h-[80vh] md:w-[40%] w-[90%] flex justify-center items-center flex-col rounded-t-4xl'>
                     <div className='bg-[#1b1a16] w-[100%] flex justify-center items-center p-3 '>
-                        {/* <img src='/logo.jpg' alt='logo' className='w-[200px]' /> */}
+                        <img src='/logo.jpg' alt='logo' className='w-[200px]' />
                     </div>
                     <div className='flex justify-center items-center flex-col gap-2 mt-4'>
                         <span className='font-semibold text-[26px] leading-[26px]'>New Password</span>

@@ -6,6 +6,7 @@ import { get_home_content } from "@/api/apiClient";
 import { AxiosError } from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { Button } from "@mui/material";
+import Link from "next/link";
 
 const Home: React.FC = () => {
   const query = useQuery({
@@ -32,7 +33,7 @@ const Home: React.FC = () => {
         <div className="md:text-6xl text-2xl flex flex-col justify-center items-center gap-3 ">
           <div dangerouslySetInnerHTML={{ __html: query.data?.data?.description }} />
           <div>
-            <Button className="text-black" href="/pages/unprotected/#internship" variant="contained">Learn more</Button>
+        <Link href="/pages/unprotected/#internship"><Button className="text-black" href="/pages/unprotected/#internship" variant="contained">Learn more</Button></Link>
           </div>
         </div>
         <figure className="w-full md:w-[40%] ">
